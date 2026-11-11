@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - Nexus ERP{% endblock %}
+
+{% block content %}
+<div class="dashboard-layout">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <h2>Nexus<span class="highlight">ERP</span></h2>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="active"><a href="#">📊 Visão Geral</a></li>
+                <li><a href="#">👥 Clientes (Em breve)</a></li>
+                <li><a href="#">💰 Financeiro (Em breve)</a></li>
+                <li><a href="#">📦 Estoque (Em breve)</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <form action="{{ url_for('login') }}" method="GET">
+                <button type="submit" class="btn-logout">Sair</button>
+            </form>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div class="greeting">
+                <h1>Bem-vindo, <span>Administrador</span></h1>
+            </div>
+        </header>
+
+        <section class="dashboard-content">
+            <h3 class="section-title">Indicadores Principais</h3>
+            <div class="cards-grid">
+                <div class="card">
+                    <h4>Faturamento Mensal</h4>
+                    <p class="card-value">--</p>
+                </div>
+                <div class="card">
+                    <h4>Novos Clientes</h4>
+                    <p class="card-value">--</p>
+                </div>
+                <div class="card">
+                    <h4>Pedidos Pendentes</h4>
+                    <p class="card-value">--</p>
+                </div>
+                <div class="card">
+                    <h4>Estoque Baixo (Itens)</h4>
+                    <p class="card-value">--</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+{% endblock %}

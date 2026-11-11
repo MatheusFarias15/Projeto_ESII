@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}Cadastro - Nexus ERP{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <div class="auth-header">
+            <h2>Nexus<span class="highlight">ERP</span></h2>
+            <p>Crie sua conta no sistema</p>
+        </div>
+        <form action="{{ url_for('register') }}" method="POST" class="auth-form" id="register-form">
+            <div class="form-group">
+                <label for="name">Nome Completo</label>
+                <input type="text" id="name" name="name" required placeholder="Seu nome">
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required placeholder="seu@email.com">
+            </div>
+            <div class="form-group password-group">
+                <label for="password">Senha</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="password" required placeholder="Mínimo 8 caracteres">
+                    <button type="button" class="toggle-password" data-target="password">👁️</button>
+                </div>
+            </div>
+            <div class="form-group password-group">
+                <label for="confirm_password">Confirme a Senha</label>
+                <div class="password-wrapper">
+                    <input type="password" id="confirm_password" name="confirm_password" required placeholder="Repita a senha">
+                    <button type="button" class="toggle-password" data-target="confirm_password">👁️</button>
+                </div>
+                <small id="password-error" class="error-text"></small>
+            </div>
+            <button type="submit" class="btn-primary">Cadastrar</button>
+        </form>
+        <div class="auth-footer">
+            <p>Já possui conta? <a href="{{ url_for('login') }}">Faça login</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
