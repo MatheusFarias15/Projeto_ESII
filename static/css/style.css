@@ -303,3 +303,24 @@ a:hover {
         border-bottom: 3px solid var(--accent-blue);
     }
 }
+.flash-messages {
+    position: relative;
+    z-index: 10;
+    width: min(100% - 2rem, 28rem);
+    margin: 1rem auto;
+}
+
+.flash-message {
+    margin: 0 0 0.5rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid #e5b7b7;
+    border-radius: 8px;
+    color: #7b2424;
+    background: #fff1f1;
+}
+
+.flash-success {
+    border-color: #a7d7b2;
+    color: #205c30;
+    background: #edfff1;
+}

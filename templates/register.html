@@ -9,7 +9,8 @@
             <h2>Nexus<span class="highlight">ERP</span></h2>
             <p>Crie sua conta no sistema</p>
         </div>
-        <form action="{{ url_for('register') }}" method="POST" class="auth-form" id="register-form">
+        <form action="{{ url_for('register.register_view') }}" method="POST" class="auth-form" id="register-form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
             <div class="form-group">
                 <label for="name">Nome Completo</label>
                 <input type="text" id="name" name="name" required placeholder="Seu nome">
@@ -36,7 +37,7 @@
             <button type="submit" class="btn-primary">Cadastrar</button>
         </form>
         <div class="auth-footer">
-            <p>Já possui conta? <a href="{{ url_for('login') }}">Faça login</a></p>
+            <p>Já possui conta? <a href="{{ url_for('login.login_view') }}">Faça login</a></p>
         </div>
     </div>
 </div>
